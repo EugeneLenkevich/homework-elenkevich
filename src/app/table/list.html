@@ -1,4 +1,11 @@
 <div class="table-wrapper" role="table">
+    <div class="buttons-wrapper">
+        <button type="button" class="text-white btn-blue" data-modal-target="default-modal"
+                data-modal-toggle="default-modal" id="btn-add">
+            <span class="btn-add-icon"></span> Add Data
+        </button>
+    </div>
+
     <table class="agents-table">
         <thead class="agents-table-head"></thead>
         <tbody>
@@ -17,3 +24,68 @@
 <template id="template-row-column">
     <td class="agents-table-row-column"></td>
 </template>
+
+<div id="default-modal" tabindex="-1" aria-hidden="true"
+     class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+    <div class="relative p-4 w-full max-w-2xl max-h-full">
+        <!-- Modal content -->
+        <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+            <form id="agent-form">
+                <!-- Modal header -->
+                <div class="items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                    <div>
+
+                        <label for="agentId" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Уникальный
+                            идентификатор</label>
+                        <input type="text" name="agentId" id="agentId"
+                               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                               required
+                        />
+                    </div>
+                    <div>
+                        <label for="agentName" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Наименование</label>
+                        <input type="text" name="agentName" id="agentName"
+                               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                               required
+                        />
+
+                    </div>
+                    <div>
+                        <label for="inn" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">ИНН</label>
+                        <input type="text" name="inn" id="inn"
+                               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                               required
+                        />
+                    </div>
+                    <div>
+
+                        <label for="address" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Адрес</label>
+                        <input type="text" name="address" id="address"
+                               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                               required
+                        />
+                    </div>
+                    <div>
+                        <label for="kpp" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">КПП</label>
+                        <input type="text" name="kpp" id="kpp"
+                               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                               required
+                        />
+                    </div>
+
+                </div>
+            </form>
+            <!-- Modal footer -->
+            <div class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
+                <button data-modal-hide="default-modal" type="button" id="submit-agent"
+                        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    Сохранить
+                </button>
+                <button data-modal-hide="default-modal" type="button"
+                        class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
+                    Отмена
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

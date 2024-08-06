@@ -32,23 +32,30 @@ const createRowColumn = (content) => {
     return rowColumn;
 }
 
-for(const item of items) {
-    const bodyRowElement = document.createElement('tr');
+function reloadTable() {
+    for (const item of items) {
+        const bodyRowElement = document.createElement('tr');
 
-    // add css class
-    bodyRowElement.classList.add('dom-table-row')
+        // add css class
+        bodyRowElement.classList.add('dom-table-row')
 
-    const rowHead = templateRowHead.content.children[0].cloneNode();
+        const rowHead = templateRowHead.content.children[0].cloneNode();
 
-    bodyRowElement.appendChild(rowHead)
-    bodyRowElement.appendChild(createRowColumn(item.name));
-    bodyRowElement.appendChild(createRowColumn(item.inn));
-    bodyRowElement.appendChild(createRowColumn(item.address));
-    bodyRowElement.appendChild(createRowColumn(item.kpp));
-    rowHead.innerHTML = item.name;
+        bodyRowElement.appendChild(rowHead)
+        bodyRowElement.appendChild(createRowColumn(item.name));
+        bodyRowElement.appendChild(createRowColumn(item.inn));
+        bodyRowElement.appendChild(createRowColumn(item.address));
+        bodyRowElement.appendChild(createRowColumn(item.kpp));
+        rowHead.innerHTML = item.name;
 
-    tBodyElement.appendChild(bodyRowElement)
+        tBodyElement.appendChild(bodyRowElement)
+    }
 }
 
+reloadTable();
+
+function addAgent() {
+    console.log(arguments)
+}
 
 export default () => element;
